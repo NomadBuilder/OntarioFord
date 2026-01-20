@@ -1,7 +1,8 @@
 'use client'
 
 import { useEffect, useState, useMemo } from 'react'
-import { useLedgerStore } from '@/store/ledgerStore'
+import { useLedgerStore } from '../store/ledgerStore'
+import { getDataFile } from '../utils/dataPath'
 import type { VendorYearlyPayments } from '@/types'
 
 interface Bubble {
@@ -29,7 +30,7 @@ export default function LedgerBubbles({ year, width, height }: LedgerBubblesProp
   useEffect(() => {
     let cancelled = false
     
-    fetch('/data/processed/vendors_master.json')
+    fetch(getDataFile('vendors_master.json'))
       .then(r => {
         if (!r.ok) {
           throw new Error(`HTTP ${r.status}`)

@@ -1,8 +1,8 @@
-# Data Analysis: Does It Support the Privatization Thesis?
+# Data Analysis: Does It Support the Privatization (Americanization) Thesis?
 
 ## Executive Summary
 
-**YES, the data supports the thesis of increasing privatization**, but with important caveats.
+**YES, the data supports the thesis of increasing privatization (Americanization)**, but with important caveats.
 
 ## Key Findings
 
@@ -60,7 +60,7 @@ The data shows for-profit payments accelerated post-2018:
 2. **Data Quality Issues**:
    - 2019 data appears incomplete (shows $0)
    - Some years may have missing data
-   - Aggregate categories filtered out (may hide some privatization)
+   - Aggregate categories filtered out (may hide some privatization (Americanization))
 
 3. **Context Missing**:
    - Don't know if for-profit growth replaced public capacity
@@ -91,7 +91,7 @@ The data shows for-profit payments accelerated post-2018:
 
 1. **Service Replacement**: Can't tell if for-profit services replaced public services
 2. **Quality Impact**: No quality or outcome data
-3. **Full Picture**: 99% of vendors unclassified — may hide significant privatization
+3. **Full Picture**: 99% of vendors unclassified — may hide significant privatization (Americanization)
 4. **Causation**: Can't prove Ford policies caused the shift (correlation, not causation)
 
 ## Conclusion
@@ -106,7 +106,7 @@ The data shows for-profit payments accelerated post-2018:
 - The trend is real and measurable
 
 ⚠️ **Weak support for:**
-- Complete privatization (still only 2.4% of payments)
+- Complete privatization (Americanization) (still only 2.4% of payments)
 - Service replacement (can't tell from payment data alone)
 - Policy causation (correlation, not causation)
 

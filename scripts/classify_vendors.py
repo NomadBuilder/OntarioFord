@@ -155,6 +155,11 @@ def classify_vendor(name: str) -> Dict[str, Any]:
         'payments made for services': {'vendor_type': 'unknown', 'note': 'Aggregate category'},
         'interest on ontario securities': {'vendor_type': 'unknown', 'note': 'Interest payment'},
         'accounts under': {'vendor_type': 'unknown', 'note': 'Aggregate category'},
+        # Payment processors/pass-throughs - funds flow through to end recipients, not retained by processor
+        'dh corporation': {'vendor_type': 'unknown', 'note': 'Payment processor for OSAP - funds pass through to students'},
+        'd+h': {'vendor_type': 'unknown', 'note': 'Payment processor - funds pass through to end recipients'},
+        'davis + henderson': {'vendor_type': 'unknown', 'note': 'Payment processor - funds pass through to end recipients'},
+        'davis & henderson': {'vendor_type': 'unknown', 'note': 'Payment processor - funds pass through to end recipients'},
     }
     
     for key, value in special_cases.items():

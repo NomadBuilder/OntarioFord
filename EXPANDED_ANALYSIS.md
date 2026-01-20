@@ -42,7 +42,7 @@ After expanding classification from top 500 to top 2,000 vendors:
 
 ## What This Reveals
 
-### ✅ Stronger Evidence for Privatization
+### ✅ Stronger Evidence for Privatization (Americanization)
 
 1. **More Complete Picture**: Classifying 4.5x more vendors revealed an additional $1.41B in for-profit payments
 2. **Consistent Pattern**: The growth trend holds even with expanded classification
@@ -65,7 +65,7 @@ After expanding classification from top 500 to top 2,000 vendors:
 
 ## Conclusion
 
-**The expanded classification strengthens the privatization thesis:**
+**The expanded classification strengthens the privatization (Americanization) thesis:**
 
 - Revealed **34.9% more** for-profit payments than initially detected
 - For-profit payments grew **6.8x faster** than public

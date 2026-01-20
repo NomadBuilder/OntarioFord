@@ -145,7 +145,7 @@
 
 ## 🎯 Success Criteria
 
-- [ ] Visualization clearly shows privatization drift
+- [ ] Visualization clearly shows privatization (Americanization) drift
 - [ ] Emotional narrative resonates
 - [ ] Receipts mode provides credible proof
 - [ ] Methodology withstands scrutiny

@@ -1,7 +1,8 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import type { Payment, Vendor } from '@/types'
+import type { Payment, Vendor } from '../types'
+import { getDataFile } from '../utils/dataPath'
 
 interface VendorCardProps {
   vendorId: string
@@ -17,8 +18,8 @@ export default function VendorCard({ vendorId }: VendorCardProps) {
       setLoading(true)
       try {
         const [vendorsList, paymentsList] = await Promise.all([
-          fetch(`/data/processed/vendors_master.json`).then(r => r.json()).catch(() => []),
-          fetch(`/data/processed/payments_by_year.json`).then(r => r.json()).catch(() => []),
+          fetch(getDataFile('vendors_master.json')).then(r => r.json()).catch(() => []),
+          fetch(getDataFile('payments_by_year.json')).then(r => r.json()).catch(() => []),
         ])
 
         const vendorData = Array.isArray(vendorsList) 
@@ -163,7 +164,7 @@ export default function VendorCard({ vendorId }: VendorCardProps) {
         <div>
           <p className="text-xs text-gray-400 font-light mb-1">Source Data:</p>
           <a
-            href="https://data.ontario.ca/dataset/detailed-schedule-of-payments"
+            href="https://data.ontario.ca/dataset/public-accounts-detailed-schedule-of-payments"
             target="_blank"
             rel="noopener noreferrer"
             className="text-xs text-blue-600 hover:text-blue-800 underline font-light"

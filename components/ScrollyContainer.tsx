@@ -4,14 +4,16 @@ import { useEffect, useRef, useState } from 'react'
 import { useLedgerStore } from '@/store/ledgerStore'
 import SectionColdOpen from './sections/SectionColdOpen'
 import SectionNumbers from './sections/SectionNumbers'
+import SectionPolicyTimeline from './sections/SectionPolicyTimeline'
 import SectionLedgerEnhanced from './sections/SectionLedgerEnhanced'
-import SectionNaming from './sections/SectionNaming'
+import SectionFordTracker from './sections/SectionFordTracker'
+import SectionKeyFindings from './sections/SectionKeyFindings'
 import SectionLenses from './sections/SectionLenses'
 import SectionLoss from './sections/SectionLoss'
 import ReceiptOverlay from './ReceiptOverlay'
 import MethodologyDrawer from './MethodologyDrawer'
 import DataSourcesDrawer from './DataSourcesDrawer'
-import ReceiptsToggle from './ReceiptsToggle'
+import TopNavigation from './TopNavigation'
 
 export default function ScrollyContainer() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -19,6 +21,25 @@ export default function ScrollyContainer() {
   const { setScrollProgress, setCurrentYear } = useLedgerStore()
   const [showMethodology, setShowMethodology] = useState(false)
   const [showDataSources, setShowDataSources] = useState(false)
+
+  // Ensure only one drawer is open at a time
+  const handleMethodologyToggle = () => {
+    if (showMethodology) {
+      setShowMethodology(false)
+    } else {
+      setShowDataSources(false)
+      setShowMethodology(true)
+    }
+  }
+
+  const handleDataSourcesToggle = () => {
+    if (showDataSources) {
+      setShowDataSources(false)
+    } else {
+      setShowMethodology(false)
+      setShowDataSources(true)
+    }
+  }
   const [isLedgerVisible, setIsLedgerVisible] = useState(false)
 
   useEffect(() => {
@@ -81,15 +102,27 @@ export default function ScrollyContainer() {
 
   return (
     <div ref={containerRef} className="relative">
+      <TopNavigation 
+        onDataSourcesClick={handleDataSourcesToggle}
+        onMethodologyClick={handleMethodologyToggle}
+      />
       {/* Scrollable content sections */}
-      <div className="relative z-10">
+            <div className="relative z-10">
         <SectionColdOpen />
-        <SectionNumbers />
-        <div ref={ledgerSectionRef}>
+        <section id="numbers">
+          <SectionNumbers />
+        </section>
+        <section id="timeline">
+          <SectionPolicyTimeline />
+        </section>
+        <section id="ledger" ref={ledgerSectionRef}>
           <SectionLedgerEnhanced />
-        </div>
-        <SectionNaming />
+        </section>
         <SectionLenses />
+        <SectionFordTracker />
+        <section id="findings">
+          <SectionKeyFindings />
+        </section>
         <SectionLoss />
       </div>
 
@@ -108,24 +141,6 @@ export default function ScrollyContainer() {
         onClose={() => setShowDataSources(false)} 
       />
 
-      {/* Control buttons - responsive positioning */}
-      <div className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-50 flex flex-col gap-2 md:gap-3">
-        <ReceiptsToggle />
-        <button
-          onClick={() => setShowDataSources(true)}
-          className="px-4 py-2.5 md:py-2 text-sm bg-white/90 backdrop-blur-sm border border-gray-200 rounded-lg shadow-sm hover:bg-white transition-colors active:scale-95 touch-manipulation"
-          aria-label="View Data Sources"
-        >
-          Data Sources
-        </button>
-        <button
-          onClick={() => setShowMethodology(true)}
-          className="px-4 py-2.5 md:py-2 text-sm bg-white/90 backdrop-blur-sm border border-gray-200 rounded-lg shadow-sm hover:bg-white transition-colors active:scale-95 touch-manipulation"
-          aria-label="View Methodology"
-        >
-          Methodology
-        </button>
-      </div>
     </div>
   )
 }

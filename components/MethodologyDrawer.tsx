@@ -16,17 +16,19 @@ export default function MethodologyDrawer({ isOpen, onClose }: MethodologyDrawer
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={onClose}
-            className="fixed inset-0 bg-black/50 z-50"
+            style={{ position: 'fixed', inset: 0, zIndex: 50 }}
             aria-hidden="true"
-          />
+          >
+            <div onClick={onClose} className="w-full h-full bg-black/50" />
+          </motion.div>
           <motion.div
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'spring', damping: 30, stiffness: 300 }}
-            className="fixed right-0 top-0 h-full w-full max-w-2xl bg-white shadow-xl z-50 overflow-y-auto"
+            style={{ position: 'fixed', right: 0, top: 0, height: '100%', width: '100%', maxWidth: '42rem', zIndex: 50 }}
           >
+            <div className="h-full w-full bg-white shadow-xl overflow-y-auto">
             <div className="p-4 md:p-8">
               <div className="flex justify-between items-center mb-6 md:mb-8">
                 <h2 className="text-2xl md:text-3xl font-light text-gray-900">Methodology</h2>
@@ -41,7 +43,7 @@ export default function MethodologyDrawer({ isOpen, onClose }: MethodologyDrawer
 
               <div className="space-y-6 md:space-y-8 prose prose-sm md:prose max-w-none">
                 <section>
-                  <h3 className="text-lg md:text-xl font-light text-gray-900 mb-3 md:mb-4">Data Source</h3>
+                  <h3 className="text-lg md:text-xl font-light text-gray-900 mb-3 md:mb-4">Data Sources</h3>
                   <p className="text-sm md:text-base text-gray-700 mb-3 md:mb-4 font-light leading-relaxed">
                     This experience visualizes publicly reported spending data from Ontario&apos;s Public Accounts — 
                     Detailed Schedule of Payments. This is first-party government data published under Ontario&apos;s 
@@ -52,7 +54,7 @@ export default function MethodologyDrawer({ isOpen, onClose }: MethodologyDrawer
                   </p>
                   <div className="space-y-2">
                     <a
-                      href="https://data.ontario.ca/dataset/detailed-schedule-of-payments"
+                      href="https://data.ontario.ca/dataset/public-accounts-detailed-schedule-of-payments"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-sm text-blue-600 hover:text-blue-800 underline font-light block"
@@ -71,10 +73,59 @@ export default function MethodologyDrawer({ isOpen, onClose }: MethodologyDrawer
                 </section>
 
                 <section>
+                  <h3 className="text-lg md:text-xl font-light text-gray-900 mb-3 md:mb-4">Additional Research Sources</h3>
+                  <p className="text-sm md:text-base text-gray-700 mb-3 md:mb-4 font-light leading-relaxed">
+                    This visualization incorporates insights and data from additional research reports:
+                  </p>
+                  <div className="space-y-3">
+                    <a
+                      href="https://www.policyalternatives.ca/news-research/hollowed-out/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-blue-600 hover:text-blue-800 underline font-light block"
+                    >
+                      CCPA: &quot;Hollowed Out&quot; — Private Staffing Agencies Report →
+                    </a>
+                    <a
+                      href="https://www.ontariohealthcoalition.ca/wp-content/uploads/Final-Ford-government-LTC-bed-allocations-report.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-blue-600 hover:text-blue-800 underline font-light block"
+                    >
+                      Ontario Health Coalition: LTC Bed Allocations Report →
+                    </a>
+                    <a
+                      href="https://ofl.ca/ford-tracker/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-blue-600 hover:text-blue-800 underline font-light block"
+                    >
+                      OFL Ford Tracker →
+                    </a>
+                  </div>
+                </section>
+
+                <section>
                   <h3 className="text-lg md:text-xl font-light text-gray-900 mb-3 md:mb-4">Time Window</h3>
                   <p className="text-sm md:text-base text-gray-700 font-light leading-relaxed">
                     Data covers fiscal years 2018-2024, focusing on the period since Doug Ford took office 
                     and Ford era (2018-2024).
+                  </p>
+                </section>
+
+                <section>
+                  <h3 className="text-lg md:text-xl font-light text-gray-900 mb-3 md:mb-4">Data Integrity</h3>
+                  <p className="text-sm md:text-base text-gray-700 mb-3 md:mb-4 font-light leading-relaxed">
+                    This data has been systematically audited and corrected:
+                  </p>
+                  <ul className="list-disc list-inside space-y-2 text-sm md:text-base text-gray-700 ml-2 md:ml-4 font-light leading-relaxed">
+                    <li><strong className="font-normal">Payment Processors Excluded:</strong> Accounting pass-throughs like D+H (OSAP loans) are excluded from for-profit calculations</li>
+                    <li><strong className="font-normal">Public Institutions Corrected:</strong> Hospitals, municipalities, and public entities misclassified as for-profit have been corrected</li>
+                    <li><strong className="font-normal">Multi-Source Verification:</strong> Data cross-referenced with CCPA reports, Ontario Health Coalition analysis, and OFL tracking</li>
+                    <li><strong className="font-normal">Transparent Methodology:</strong> All classification rules, exclusions, and corrections are documented</li>
+                  </ul>
+                  <p className="text-sm md:text-base text-gray-700 mt-3 md:mt-4 font-light leading-relaxed">
+                    <strong className="font-normal">Example:</strong> D+H Corporation was initially classified as for-profit with a $1.7B payment, but was corrected to a payment processor/pass-through for OSAP loans and grants. This was not a $1.7B payment to a for-profit company—it was student financial aid flowing through a payment system.
                   </p>
                 </section>
 
@@ -101,6 +152,7 @@ export default function MethodologyDrawer({ isOpen, onClose }: MethodologyDrawer
                     <li>Classification is based on publicly available information</li>
                     <li>Not all vendors are classified — focus is on top spenders and fastest growers</li>
                     <li>Data is a static snapshot — no real-time updates</li>
+                    <li>Public Accounts show payment processors, not always end recipients — large pass-through payments are excluded</li>
                   </ul>
                 </section>
 
@@ -127,6 +179,7 @@ export default function MethodologyDrawer({ isOpen, onClose }: MethodologyDrawer
                   </ol>
                 </section>
               </div>
+            </div>
             </div>
           </motion.div>
         </>
