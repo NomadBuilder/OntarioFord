@@ -63,7 +63,7 @@ export default function ReceiptsPage() {
               )}
             </div>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 font-light max-w-4xl mx-auto">
-              Every payment is documented. Vendor names, exact dollar amounts, ministry and year—all sourced from Ontario&apos;s Public Accounts.
+              Every payment is documented. Vendor names, exact dollar amounts, ministry, and year — all sourced from Ontario&apos;s Public Accounts.
             </p>
           </div>
 

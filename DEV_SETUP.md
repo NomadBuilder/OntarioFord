@@ -32,3 +32,8 @@ Next.js has built-in hot reloading. If you see 500 errors:
 ### Hot reload not working
 - Next.js should auto-reload on file changes
 - If not, restart with `npm run dev:reset`
+
+### 404 on /water, /receipts, or “page.js” / blank page
+- **Fix:** Clear the Next cache and restart: run **`npm run dev:clean`** (or `rm -rf .next && npm run dev`), then open **http://localhost:3000/water**, **http://localhost:3000/receipts**, etc. In dev, basePath is forced off so script chunks load from the root.
+- **Use the dev server for local work:** run `npm run dev` and open routes at the root (e.g. **http://localhost:3000/receipts**, **http://localhost:3000/water**), not `/ledger/...`.
+- If you serve the **static export** (e.g. `out/` folder) at the root, the built app expects the base path `/ledger`. Open **http://localhost:3000/ledger/receipts** when testing the static build locally, or run `npm run dev` and use **http://localhost:3000/receipts**.
