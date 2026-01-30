@@ -48,6 +48,12 @@ export default function SectionWaterControlSlider() {
     setIsPublic(value < 50)
   }
 
+  const handleSliderTouchEnd = (e: React.TouchEvent<HTMLInputElement>) => {
+    // On touch end, snap to the nearest end
+    const value = parseInt((e.target as HTMLInputElement).value)
+    setIsPublic(value < 50)
+  }
+
   const currentContent = isPublic ? publicControl : corporateControl
 
   return (
@@ -98,7 +104,7 @@ export default function SectionWaterControlSlider() {
                     value={isPublic ? 0 : 100}
                     onChange={handleSliderChange}
                     onMouseUp={handleSliderMouseUp}
-                    onTouchEnd={handleSliderMouseUp}
+                    onTouchEnd={handleSliderTouchEnd}
                     className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
                   />
                   

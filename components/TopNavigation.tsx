@@ -51,8 +51,10 @@ const dataDropdownItems: NavItem[] = [
 ]
 
 const navItems: NavItem[] = [
-  { id: 'healthcare', label: 'Healthcare & Staffing', href: '/healthcare' },
+  { id: 'healthcare', label: 'Healthcare', href: '/healthcare' },
   { id: 'water', label: 'Water Privatization', href: '/water' },
+  { id: 'greenbelt', label: 'Greenbelt', href: '/greenbelt' },
+  { id: 'bill5', label: 'Wildlife Impact', href: '/bill5' },
   { id: 'data', label: 'The Data', isDropdown: true, dropdownItems: dataDropdownItems },
   // { id: 'trade-off', label: 'The Trade-Off', href: '/thetradeoff' }, // Hidden for now
   { id: 'about', label: 'About', href: '/about' },
@@ -199,13 +201,13 @@ export default function TopNavigation({ onDataSourcesClick, onMethodologyClick }
                       )
                     }
                     return (
-                      <button
-                        key={item.id}
-                        onClick={() => handleNavClick(item)}
-                        className="px-3 lg:px-4 py-2 text-sm lg:text-base font-light text-gray-600 hover:text-gray-900 transition-colors rounded-md hover:bg-gray-100/50 whitespace-nowrap"
-                      >
-                        {item.label}
-                      </button>
+                    <button
+                      key={item.id}
+                      onClick={() => handleNavClick(item)}
+                      className="px-3 lg:px-4 py-2 text-sm lg:text-base font-light text-gray-600 hover:text-gray-900 transition-colors rounded-md hover:bg-gray-100/50 whitespace-nowrap"
+                    >
+                      {item.label}
+                    </button>
                     )
                   })}
                 </div>
@@ -361,25 +363,25 @@ function MobileMenu({
                           )
                         }
                         return (
-                          <button
-                            key={item.id}
-                            onClick={() => {
-                              if (item.action === 'dataSources' && onDataSourcesClick) {
-                                onDataSourcesClick()
-                              } else if (item.action === 'methodology' && onMethodologyClick) {
-                                onMethodologyClick()
-                              } else if (item.href) {
-                                // Use the basePath-aware href
-                                window.location.href = getNavHref(item.href)
-                              } else if (item.section) {
-                                scrollToSection(item.section)
-                              }
-                              setIsOpen(false)
-                            }}
-                            className="w-full text-left px-4 py-4 text-lg font-light text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors"
-                          >
-                            {item.label}
-                          </button>
+                        <button
+                          key={item.id}
+                          onClick={() => {
+                            if (item.action === 'dataSources' && onDataSourcesClick) {
+                              onDataSourcesClick()
+                            } else if (item.action === 'methodology' && onMethodologyClick) {
+                              onMethodologyClick()
+                            } else if (item.href) {
+                              // Use the basePath-aware href
+                              window.location.href = getNavHref(item.href)
+                            } else if (item.section) {
+                              scrollToSection(item.section)
+                            }
+                            setIsOpen(false)
+                          }}
+                          className="w-full text-left px-4 py-4 text-lg font-light text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors"
+                        >
+                          {item.label}
+                        </button>
                         )
                       })}
                     </div>
