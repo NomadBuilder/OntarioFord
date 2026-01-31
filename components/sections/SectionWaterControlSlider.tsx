@@ -105,6 +105,7 @@ export default function SectionWaterControlSlider() {
                       onMouseUp={handleSliderMouseUp}
                       onTouchEnd={handleSliderTouchEnd}
                       className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10"
+                      aria-label="Toggle between Public Control and Corporate Control"
                     />
                   )}
                   <div

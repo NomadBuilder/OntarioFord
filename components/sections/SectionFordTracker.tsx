@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Link from 'next/link'
 
 export default function SectionFordTracker() {
   return (
@@ -41,11 +40,10 @@ export default function SectionFordTracker() {
             </p>
             <div className="space-y-3">
               {[
-                'Education funding cuts',
-                'Public health unit reductions',
-                'Social service program cuts',
-                'Environmental protection cuts',
-                'Legal aid reductions',
+                'Education and public health unit cuts',
+                'Social service and legal aid reductions',
+                'Greenbelt land removed (later reversed); environmental oversight weakened',
+                'Species-at-risk protections weakened (Bill 5)',
               ].map((item, idx) => (
                 <div key={idx} className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-red-600 rounded-full"></div>
@@ -72,11 +70,9 @@ export default function SectionFordTracker() {
             </p>
             <div className="space-y-3">
               {[
-                'Private staffing agencies ($9.2B over 10 years)',
-                'For-profit surgical clinics (Bill 60, 2023)',
-                'For-profit long-term care',
-                'Consulting and outsourcing',
-                'Private healthcare delivery',
+                'Private staffing agencies ($9.2B over 10 years); for-profit surgical clinics (Bill 60)',
+                'For-profit long-term care; consulting and outsourcing',
+                'Water and land opened to private control (Bill 60 water, Bill 5 special economic zones)',
               ].map((item, idx) => (
                 <div key={idx} className="flex items-center gap-3">
                   <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
@@ -135,33 +131,6 @@ export default function SectionFordTracker() {
                 </p>
               </div>
             </div>
-          </div>
-          </div>
-        </motion.div>
-
-        {/* Source Link and Healthcare Link */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-        >
-          <div className="text-center space-y-4">
-          <Link
-            href="/healthcare"
-            className="inline-block px-6 md:px-8 py-3 md:py-4 bg-red-600 text-white rounded-lg text-base md:text-lg font-light hover:bg-red-700 transition-colors"
-          >
-            See the healthcare impact →
-          </Link>
-          <div>
-          <a
-            href="https://ofl.ca/ford-tracker/"
-            target="_blank"
-            rel="noopener noreferrer"
-              className="inline-block px-6 md:px-8 py-3 md:py-4 bg-gray-900 text-white rounded-lg text-base md:text-lg font-light hover:bg-gray-800 transition-colors"
-          >
-            Explore the Full OFL Ford Tracker →
-          </a>
           </div>
           </div>
         </motion.div>

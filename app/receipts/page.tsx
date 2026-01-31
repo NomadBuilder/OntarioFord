@@ -57,6 +57,7 @@ export default function ReceiptsPage() {
                 <button
                   onClick={() => setSelectedVendor(null)}
                   className="text-sm md:text-base text-gray-500 hover:text-gray-700 font-light underline"
+                  aria-label="Back to vendor list"
                 >
                   ← Back to list
                 </button>

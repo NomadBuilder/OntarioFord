@@ -95,7 +95,7 @@ export default function AboutPage() {
             >
               <div className="text-center">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-light text-gray-900 mb-6 md:mb-8">
-                  About The Ledger
+                  About Protect Ontario
                 </h1>
                 <p className="text-xl sm:text-2xl md:text-3xl text-gray-600 font-light max-w-3xl mx-auto">
                   Ontario&apos;s quiet privatization (Americanization) — and the data that makes it visible
@@ -111,11 +111,11 @@ export default function AboutPage() {
             >
               <div className="bg-gray-50 rounded-2xl p-8 md:p-12 border border-gray-200">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-6">
-                  What The Ledger Is
+                  What Protect Ontario Is
                 </h2>
                 <div className="space-y-4 text-base md:text-lg text-gray-700 font-light leading-relaxed">
                   <p>
-                    The Ledger is a project that tracks and visualizes what&apos;s happening to public services and accountability in Ontario under the Ford government. When spending shifts from public to private hands, when legislation opens the door to corporate control of water or species protection, when land and accountability are traded for developer access — the patterns are often buried in spreadsheets, legalese, or press releases. The Ledger makes those patterns visible.
+                    Protect Ontario is a project that tracks and visualizes what&apos;s happening to public services and accountability in Ontario under the Ford government. When spending shifts from public to private hands, when legislation opens the door to corporate control of water or species protection, when land and accountability are traded for developer access — the patterns are often buried in spreadsheets, legalese, or press releases. Protect Ontario makes those patterns visible.
                   </p>
                   <p>
                     We cover healthcare (private staffing agencies, for-profit clinics, hospital deficits), water (Bill 60 and the path to corporate control), the Greenbelt scandal and RCMP investigation, and Bill 5&apos;s impact on species and Indigenous rights. We use only publicly available data and sources, document our methodology, and clearly distinguish between raw data and our interpretation. The goal is not to tell you what to think, but to give you the tools to see what&apos;s actually happening — so you can make informed decisions and hold power to account.
@@ -136,7 +136,7 @@ export default function AboutPage() {
                 </h2>
                 <div className="space-y-4 text-base md:text-lg text-gray-700 font-light leading-relaxed">
                   <p>
-                    The Ledger follows a few core principles:
+                    Protect Ontario follows a few core principles:
                   </p>
                   <ul className="list-disc list-inside space-y-3 ml-4 text-base md:text-lg text-gray-700 font-light">
                     <li><strong className="font-normal">Public sources only</strong> — We use data and reports that anyone can access and verify (Ontario Public Accounts, Auditor General reports, legislation, news)</li>
@@ -163,7 +163,7 @@ export default function AboutPage() {
                 </h2>
                 <div className="space-y-4 text-base md:text-lg text-gray-700 font-light leading-relaxed">
                   <p>
-                    Information is power — but only when it&apos;s accessible. When spending shifts, when legislation changes, when accountability is weakened, the details are often buried in spreadsheets and legalese. The Ledger makes those details visible so citizens, journalists, and researchers can see what&apos;s actually happening and hold power to account.
+                    Information is power — but only when it&apos;s accessible. When spending shifts, when legislation changes, when accountability is weakened, the details are often buried in spreadsheets and legalese. Protect Ontario makes those details visible so citizens, journalists, and researchers can see what&apos;s actually happening and hold power to account.
                   </p>
                   <p>
                     Transparency is a public good. The data we use is public. The patterns are real. Our role is to make them visible so that informed public discourse — and action — can happen.
@@ -180,11 +180,11 @@ export default function AboutPage() {
             >
               <div className="bg-slate-900 text-white rounded-2xl p-8 md:p-12">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-light mb-6">
-                  Behind The Ledger
+                  Behind Protect Ontario
                 </h2>
                 <div className="space-y-4 text-base md:text-lg text-gray-300 font-light leading-relaxed">
                   <p>
-                    The Ledger is built by <a href="https://darkai.ca/" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-blue-200 underline">Dark AI</a>, which develops tools and reports that make hidden patterns visible — from public spending and policy impacts to AI-enabled harms. The same approach applies here: transparent methodology, public sources only, and a focus on what the data actually shows.
+                    Protect Ontario is a project from <a href="https://darkai.ca/" target="_blank" rel="noopener noreferrer" className="text-blue-300 hover:text-blue-200 underline">Dark AI</a>, focused on making hidden patterns visible — from public spending and policy impacts to accountability gaps. Transparent methodology, public sources only, and a focus on what the data actually shows.
                   </p>
                   <p className="pt-4">
                     <a 
@@ -193,7 +193,7 @@ export default function AboutPage() {
                       rel="noopener noreferrer"
                       className="text-blue-300 hover:text-blue-200 underline font-light"
                     >
-                      Learn more about Dark AI →
+                      Dark AI →
                     </a>
                   </p>
                 </div>
@@ -216,7 +216,7 @@ export default function AboutPage() {
                   Contact
                 </h2>
                 <p className="text-lg sm:text-xl md:text-2xl text-gray-600 font-light max-w-2xl mx-auto">
-                  Questions about The Ledger, data corrections, or suggestions? Get in touch.
+                  Questions about Protect Ontario, data corrections, or suggestions? Get in touch.
                 </p>
               </div>
             </motion.div>
@@ -315,6 +315,7 @@ export default function AboutPage() {
                   type="submit"
                   disabled={isSubmitting}
                   className="w-full px-6 md:px-8 py-4 md:py-5 bg-slate-900 text-white rounded-lg text-base md:text-lg font-light hover:bg-slate-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  aria-label={isSubmitting ? 'Sending message' : 'Send message'}
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>

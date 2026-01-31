@@ -177,6 +177,7 @@ export default function AdminPage() {
               type="button"
               onClick={() => fileInputRef.current?.click()}
               className="text-sm text-blue-600 hover:text-blue-700 font-light underline underline-offset-2"
+              aria-label="Load protests from JSON file"
             >
               Load from file
             </button>

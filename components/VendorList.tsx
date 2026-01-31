@@ -99,6 +99,7 @@ export default function VendorList() {
           type="button"
           onClick={loadVendors}
           className="text-sm text-gray-700 underline hover:no-underline"
+          aria-label="Retry loading vendors"
         >
           Retry
         </button>

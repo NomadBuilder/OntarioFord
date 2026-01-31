@@ -41,7 +41,7 @@ const actions = [
   },
   {
     title: 'Stay informed and share',
-    description: 'Use the data and sources on this site to back up what you say. Share the Ledger with others so more people see the pattern.',
+    description: 'Use the data and sources on this site to back up what you say. Share Protect Ontario with others so more people see the pattern.',
     links: [
       { label: 'Data Sources', drawer: 'dataSources' as const },
       { label: 'Methodology', drawer: 'methodology' as const },
